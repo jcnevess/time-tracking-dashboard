@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./bundle.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card card__profile">
+        <div class="profile">
+          <div class="profile__picture">
+            <img src="./images/image-jeremy.png" alt="Jeremy Robson" />
+          </div>
+          <div class="profile__info">
+            Report for
+            <span class="profile__name">Jeremy Robson</span>
+          </div>
+        </div>
+        <div class="controls">
+          <ul class="controls__options">
+            <li
+              id="control_day"
+              class="controls__option"
+              onclick="setTimeFrame('day')"
+            >
+              Daily
+            </li>
+            <li
+              id="control_week"
+              class="controls__option controls__option__active"
+              onclick="setTimeFrame('week')"
+            >
+              Weekly
+            </li>
+            <li
+              id="control_month"
+              class="controls__option"
+              onclick="setTimeFrame('year')"
+            >
+              Monthly
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Work -->
+      <div class="card card__activity">
+        <div class="activity activity__work">
+          <div class="activity__info activity__daily activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Work</div>
+              <div class="activity__time">5hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Previous - 7hrs</div>
+          </div>
+
+          <div class="activity__info activity__weekly">
+            <div class="activity__current">
+              <div class="activity__name">Work</div>
+              <div class="activity__time">32hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last week - 36hrs</div>
+          </div>
+
+          <div class="activity__info activity__monthly activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Work</div>
+              <div class="activity__time">103hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last month - 128hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Play -->
+      <div class="card card__activity">
+        <div class="activity activity__play">
+          <div class="activity__info activity__daily activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Play</div>
+              <div class="activity__time">1hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Previous - 2hrs</div>
+          </div>
+
+          <div class="activity__info activity__weekly">
+            <div class="activity__current">
+              <div class="activity__name">Play</div>
+              <div class="activity__time">10hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last week - 8hrs</div>
+          </div>
+
+          <div class="activity__info activity__monthly activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Play</div>
+              <div class="activity__time">23hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last month - 29hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Study -->
+      <div class="card card__activity">
+        <div class="activity activity__study">
+          <div class="activity__info activity__daily activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Study</div>
+              <div class="activity__time">0hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Previous - 1hrs</div>
+          </div>
+
+          <div class="activity__info activity__weekly">
+            <div class="activity__current">
+              <div class="activity__name">Study</div>
+              <div class="activity__time">4hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last week - 7hrs</div>
+          </div>
+
+          <div class="activity__info activity__monthly activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Study</div>
+              <div class="activity__time">13hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last month - 19hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exercise -->
+      <div class="card card__activity">
+        <div class="activity activity__exercise">
+          <div class="activity__info activity__daily activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Exercise</div>
+              <div class="activity__time">1hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Previous - 1hrs</div>
+          </div>
+
+          <div class="activity__info activity__weekly">
+            <div class="activity__current">
+              <div class="activity__name">Exercise</div>
+              <div class="activity__time">4hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last week - 5hrs</div>
+          </div>
+
+          <div class="activity__info activity__monthly activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Exercise</div>
+              <div class="activity__time">11hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last month - 18hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="card card__activity">
+        <div class="activity activity__social">
+          <div class="activity__info activity__daily activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Social</div>
+              <div class="activity__time">1hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Previous - 3hrs</div>
+          </div>
+
+          <div class="activity__info activity__weekly">
+            <div class="activity__current">
+              <div class="activity__name">Social</div>
+              <div class="activity__time">5hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last week - 10hrs</div>
+          </div>
+
+          <div class="activity__info activity__monthly activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Social</div>
+              <div class="activity__time">21hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last month - 23hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Self care -->
+      <div class="card card__activity">
+        <div class="activity activity__selfcare">
+          <div class="activity__info activity__daily activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Self Care</div>
+              <div class="activity__time">0hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Previous - 1hrs</div>
+          </div>
+
+          <div class="activity__info activity__weekly">
+            <div class="activity__current">
+              <div class="activity__name">Self Care</div>
+              <div class="activity__time">2hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last week - 2hrs</div>
+          </div>
+
+          <div class="activity__info activity__monthly activity__hidden">
+            <div class="activity__current">
+              <div class="activity__name">Self Care</div>
+              <div class="activity__time">7hrs</div>
+            </div>
+            <div class="ellipsis">&ctdot;</div>
+            <div class="activity__previous">Last month - 11hrs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Júlio Neves</a>.
+    </div>
+  </body>
+
+  <script>
+    function setTimeFrame(timeFrame) {
+      let controls = document.querySelectorAll(".controls__option");
+
+      switch (timeFrame) {
+        case "day":
+          controls.forEach((element) =>
+            element.classList.remove("controls__option__active")
+          );
+          document
+            .querySelector("#control_day")
+            .classList.add("controls__option__active");
+
+          document
+            .querySelectorAll(".activity__daily")
+            .forEach((element) => element.classList.remove("activity__hidden"));
+          document
+            .querySelectorAll(".activity__weekly")
+            .forEach((element) => element.classList.add("activity__hidden"));
+          document
+            .querySelectorAll(".activity__monthly")
+            .forEach((element) => element.classList.add("activity__hidden"));
+          break;
+
+        case "week":
+          controls.forEach((element) =>
+            element.classList.remove("controls__option__active")
+          );
+          document
+            .querySelector("#control_week")
+            .classList.add("controls__option__active");
+
+          document
+            .querySelectorAll(".activity__daily")
+            .forEach((element) => element.classList.add("activity__hidden"));
+          document
+            .querySelectorAll(".activity__weekly")
+            .forEach((element) => element.classList.remove("activity__hidden"));
+          document
+            .querySelectorAll(".activity__monthly")
+            .forEach((element) => element.classList.add("activity__hidden"));
+          break;
+
+        case "year":
+          controls.forEach((element) =>
+            element.classList.remove("controls__option__active")
+          );
+          document
+            .querySelector("#control_month")
+            .classList.add("controls__option__active");
+
+          document
+            .querySelectorAll(".activity__daily")
+            .forEach((element) => element.classList.add("activity__hidden"));
+          document
+            .querySelectorAll(".activity__weekly")
+            .forEach((element) => element.classList.add("activity__hidden"));
+          document
+            .querySelectorAll(".activity__monthly")
+            .forEach((element) => element.classList.remove("activity__hidden"));
+          break;
+      }
+    }
+  </script>
+</html>
