@@ -1,0 +1,275 @@
+/*           CSS RESET        */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*        USER STYLES       */
+:root {
+  --color-blue: hsl(246, 80%, 60%);
+  
+  --color-lightorange: hsl(15, 100%, 70%);
+  --color-softblue: hsl(195, 74%, 62%);
+  --color-lightred: hsl(348, 100%, 68%);
+  --color-limegreen: hsl(145, 58%, 55%);
+  --color-violet: hsl(264, 64%, 52%);
+  --color-yellow: hsl(43, 84%, 65%);
+
+  --color-darkestblue: hsl(226, 43%, 10%);
+  --color-darkblue: hsl(235, 46%, 20%);
+  --color-darkblue-hover: hsl(236, 37%, 33%);
+  --color-desaturatedblue: hsl(235, 45%, 61%);
+  --color-paleblue: hsl(236, 100%, 87%);
+}
+
+body {
+  background-color: var(--color-darkestblue);
+  font-family: 'Rubik', sans-serif;
+  color: var(--color-paleblue);  
+}
+
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card__profile {
+  background-color: var(--color-darkblue);
+}
+
+.container {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+.profile {
+  background-color:  var(--color-blue);
+  display: flex;
+  padding: 2rem;  
+  border-radius: 15px;
+}
+
+.profile__picture {
+  overflow: hidden;
+  width: 25%;
+}
+
+.profile__picture img {
+  width: 100%;
+  border: solid 3px white;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+.profile__info {
+  font-size: 0.8rem;
+  padding-inline: 1rem;
+  align-self: center;
+}
+
+.profile__name {
+  color: white;
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 300;
+  padding-block: 0.5rem;
+}
+
+.controls__options {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1.5rem;
+}
+
+.controls__option {
+  cursor: pointer;
+  padding: 0.75rem;
+
+  &:hover, &:active {
+    color: white;
+  }
+}
+
+.controls__option__active {
+  color: white;
+}
+
+.activity {
+  margin-top: 1.25rem;
+  border-radius: 20px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 92.5% -25%;
+  background-clip: padding-box;
+}
+
+.activity__work {
+  background-color: var(--color-lightorange);
+  background-image: url(./images/icon-work.svg);
+}
+
+.activity__play {
+  background-color: var(--color-softblue);
+  background-image: url(./images/icon-play.svg);
+}
+
+.activity__study {
+  background-color: var(--color-lightred);
+  background-image: url(./images/icon-study.svg);
+}
+
+.activity__exercise {
+  background-color: var(--color-limegreen);
+  background-image: url(./images/icon-exercise.svg);
+  background-position-y: -5%;
+}
+
+.activity__social {
+  background-color: var(--color-violet);
+  background-image: url(./images/icon-social.svg);
+}
+
+.activity__selfcare {
+  background-color: var(--color-yellow);
+  background-image: url(./images/icon-self-care.svg);
+  background-position-y: -15%;
+}
+
+.activity__info {
+  background-color: var(--color-darkblue);
+  margin-top: 2.25rem;
+  border-radius: 15px;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  cursor: pointer;
+
+  &:hover, &:active {
+    background-color: var(--color-darkblue-hover);
+  }
+}
+
+
+.activity__hidden {
+  display: none;
+}
+
+.activity__current {
+  color: white;
+  grid-row: 1/3;
+  align-self: center;
+}
+
+.activity__name {
+  font-weight: 500;
+}
+
+.activity__time {
+  font-weight: 300;
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.activity__previous {
+  align-self: center;
+  justify-self: end;
+  font-size: 0.85rem;
+}
+
+.ellipsis {
+  align-self: start;
+  justify-self: end;
+  font-weight: bold;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+@media (min-width: 620px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+    padding-inline: 2rem;
+    width: fit-content;
+  }
+
+  .profile {
+    flex-direction: column;
+    padding: 1rem 3rem 3rem 1rem;;
+  }
+
+  .card__profile {
+    min-width: 160px;
+    grid-row: 1 / 3;
+  }
+
+  .profile__info {
+    margin-top: 1.5rem;
+    padding: 0;
+    align-self: flex-start;
+  }
+
+  .profile__picture {
+    width: 40%;
+  }
+
+  .controls__options {
+    flex-direction: column;
+    margin-block: 1rem;
+  }
+
+  .activity {
+    margin-top: 0;
+  }
+
+  .card__activity {
+    overflow: visible;
+  }
+
+  .activity__info {
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 1fr;
+  }
+
+  .activity__current {
+    margin-top: 0.75rem;
+  }
+
+  .activity__previous {
+    text-wrap: nowrap;
+    margin-top: 0.5rem;
+    grid-row: 3/4;
+    justify-self: left;
+  }
+
+  .activity__time {
+    margin-top: 1rem;
+  }
+}
