@@ -1,3 +1,23 @@
+/*           CSS RESET        */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*        USER STYLES       */
 :root {
   --color-blue: hsl(246, 80%, 60%);
   
@@ -24,6 +44,7 @@ body {
 .attribution {
   font-size: 0.7rem;
   text-align: center;
+  margin-bottom: 0.25rem;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -39,28 +60,29 @@ body {
 }
 
 .container {
-  margin: 5rem 1rem;
+  width: 90%;
+  margin: 5rem auto;
 }
 
 .profile {
   background-color:  var(--color-blue);
-  display: grid;
-  grid-template-columns: 25% 75%;
+  display: flex;
   padding: 2rem;  
   border-radius: 15px;
 }
 
 .profile__picture {
   overflow: hidden;
-  width: 100%;
+  width: 25%;
 }
 
 .profile__picture img {
-  width: 90%;
+  width: 100%;
   border: solid 3px white;
   border-radius: 50%;
   margin: auto;
   display: block;
+  box-sizing: border-box;
 }
 
 .profile__info {
@@ -86,6 +108,7 @@ body {
 
 .controls__option {
   cursor: pointer;
+  padding: 0.75rem;
 
   &:hover, &:active {
     color: white;
@@ -185,4 +208,68 @@ body {
   font-weight: bold;
   font-size: 1.75rem;
   cursor: pointer;
+}
+
+@media (min-width: 620px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+    padding-inline: 2rem;
+    width: fit-content;
+  }
+
+  .profile {
+    flex-direction: column;
+    padding: 1rem 3rem 3rem 1rem;;
+  }
+
+  .card__profile {
+    min-width: 160px;
+    grid-row: 1 / 3;
+  }
+
+  .profile__info {
+    margin-top: 1.5rem;
+    padding: 0;
+    align-self: flex-start;
+  }
+
+  .profile__picture {
+    width: 40%;
+  }
+
+  .controls__options {
+    flex-direction: column;
+    margin-block: 1rem;
+  }
+
+  .activity {
+    margin-top: 0;
+  }
+
+  .card__activity {
+    overflow: visible;
+  }
+
+  .activity__info {
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 1fr;
+  }
+
+  .activity__current {
+    margin-top: 0.75rem;
+  }
+
+  .activity__previous {
+    text-wrap: nowrap;
+    margin-top: 0.5rem;
+    grid-row: 3/4;
+    justify-self: left;
+  }
+
+  .activity__time {
+    margin-top: 1rem;
+  }
 }
