@@ -1,6 +1,4 @@
-# Frontend Mentor - Time tracking dashboard solution
-
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). 
+# Time tracking dashboard solution
 
 It was developed with HTML, CSS and Javascript.
 
@@ -58,4 +56,3 @@ This was my first time using `CSS grid` in something which was not a tutorial.
 ## Author
 
 - Website - [Júlio Neves](https://jcnevess.github.io/)
-- Frontend Mentor - [@jcnevess](https://www.frontendmentor.io/profile/jcnevess)
